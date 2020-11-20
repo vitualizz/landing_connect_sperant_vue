@@ -1,4 +1,12 @@
 .o-contact
   margin: 20px
+  @include desktop
+    margin: 50px
   &__message
     color: $text-color-secondary
+  &__form
+    .el-button, .el-select
+      width: 100%
+    @include desktop
+      .el-button
+        width: 150px

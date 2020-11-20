@@ -1,12 +1,23 @@
 .t-home
   height: 100%
-  @include tablet
-    display: flex
-    flex-direction: column
-    justify-content: center
+  @include large
+    background: $t-home--background
   &__wrapper
     @include tablet
-      height: 600px
-      width: 640px
+      display: flex
+      flex-wrap: wrap
+      align-content: center
+      height: 100%
+      width: auto
+    @include large
+      max-width: 1400px
       margin: auto
-      background: red
+    &Side
+      height: 100%
+      background: $t-home__wrapperSide--background
+      @include tablet
+        width: 50%
+    &Banner
+      background-image: url('~@assets/imgs/banner.jpg')
+      background-repeat: no-repeat
+      background-size: cover
