@@ -1,0 +1,53 @@
+.hidden
+  // Mobile
+  &-mobile
+    @media (min-width: 0px) and (max-width: $mobile - 1)
+      display: none
+
+    @media only screen and (min-width: $mobile)
+      &-up
+        display: none
+
+    @media only screen and (max-width: $mobile - 1px)
+      &-down
+        display: none
+
+  // Tablet
+  &-tablet
+    @media (min-width: $mobile) and (max-width: $tablet - 1)
+      display: none
+
+    @media only screen and (min-width: $tablet)
+      &-up
+        display: none
+
+    @media only screen and (max-width: $tablet - 1px)
+      &-down
+        display: none
+
+  // Desktop
+  &-desktop
+    @media (min-width: $tablet) and (max-width: $large - 1)
+      display: none
+
+    @media only screen and (min-width: $desktop)
+      &-up
+        display: none
+
+    @media only screen and (max-width: $desktop - 1px)
+      &-down
+        display: none
+
+  // Large
+  &-large
+    //@media (min-width: $large) Is equal to next line
+    //  display: none
+
+    @media only screen and (min-width: $large)
+      display: none
+      &-up
+        display: none
+
+    @media only screen and (max-width: $large - 1px)
+      &-down
+      display: none

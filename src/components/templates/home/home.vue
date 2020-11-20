@@ -1,7 +1,7 @@
 <template lang='pug'>
 .t-home
   .t-home-wrapper
-    .t-home-wrapperSide
+    .t-home-wrapperSide(v-hidden:mobile)
       h1 Gaaaaaa
     .t-home-wrapperSide
 </template>
