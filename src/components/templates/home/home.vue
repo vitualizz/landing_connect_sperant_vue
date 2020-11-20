@@ -1,22 +1,22 @@
 <template lang='pug'>
 .t-home
   ONavbar(v-hidden:mobile-up)
-  .t-home-wrapper
-    .t-home-wrapperSide(v-hidden:mobile)
+  .t-home__wrapper
+    .t-home__wrapperSide(v-hidden:mobile)
       h1 Gaaaaaa
-    .t-home-wrapperSide
-      OContactForm
+    .t-home__wrapperSide
+      OContact
 </template>
 
 <script>
 import ONavbar from '@organisms/navbar'
-import OContactForm from '@organisms/contact_form'
+import OContact from '@organisms/contact'
 
 export default {
   name: 'THome',
   components: {
     ONavbar,
-    OContactForm
+    OContact
   }
 }
 </script>
