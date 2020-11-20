@@ -1,14 +1,14 @@
 <template lang='pug'>
-THome
+Home
 </template>
 
 <script>
-import THome from '@pages/home.vue'
+import Home from '@pages/home.vue'
 
 export default {
   name: 'App',
   components: {
-    THome
+    Home
   }
 }
 </script>

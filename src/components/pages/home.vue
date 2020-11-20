@@ -1,10 +1,14 @@
 <template lang='pug'>
-div
-  h1 Gaa
+THome
 </template>
 
 <script>
+import THome from '@templates/home'
+
 export default {
-  name: 'THome'
+  name: 'Home',
+  components: {
+    THome
+  }
 }
 </script>
