@@ -6,6 +6,7 @@
       br
       span.f-bold DEPA!
   .o-contact__form
+    el-button gaaa
 </template>
 
 <script>
