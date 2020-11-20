@@ -1,10 +1,14 @@
 <template lang='pug'>
-div
-  h1 Hello Men
+THome
 </template>
 
 <script>
+import THome from '@pages/home.vue'
+
 export default {
-  name: 'App'
+  name: 'App',
+  components: {
+    THome
+  }
 }
 </script>
