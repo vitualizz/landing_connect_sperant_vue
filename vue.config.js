@@ -14,5 +14,12 @@ module.exports = {
         "@atoms": path.resolve(__dirname, './src/components/atoms')
       }
     }
+  },
+  css: {
+    loaderOptions: {
+      sass: {
+        additionalData: `@import "@assets/styles/loader.sass"`
+      }
+    }
   }
 }

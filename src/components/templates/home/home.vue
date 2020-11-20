@@ -2,7 +2,7 @@
 .t-home
   .t-home-wrapper
     .t-home-wrapperSide
-      h1 Gaa
+      h1 Gaaaaaa
     .t-home-wrapperSide
 </template>
 
