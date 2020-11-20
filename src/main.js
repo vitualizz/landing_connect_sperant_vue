@@ -1,12 +1,13 @@
 import { createApp } from 'vue'
 import App from './App.vue'
-import { Button, Input } from 'element-plus'
+
+import ElementPlus from 'element-plus'
+import 'element-plus/lib/theme-chalk/index.css';
 
 const app = createApp(App)
 
 // Element
-const components = [Button, Input]
-components.forEach(component => app.use(component))
+app.use(ElementPlus)
 
 // Directive
 app.directive('hidden', (el, binding) => {
