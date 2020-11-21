@@ -1,14 +1,15 @@
 import { createApp } from 'vue'
 import App from './App.vue'
 
-import ElementPlus from 'element-plus'
+import { Form, Input, Button, Select } from 'element-plus'
 import 'element-plus/lib/theme-chalk/index.css'
-import locale from 'element-plus/lib/locale/lang/es'
+//import locale from 'element-plus/lib/locale/lang/es'
 
 const app = createApp(App)
 
 // Element
-app.use(ElementPlus, { locale })
+const components = [Form, Input, Select, Button]
+components.forEach(x => app.use(x))
 
 // Directive
 app.directive('hidden', (el, binding) => {
