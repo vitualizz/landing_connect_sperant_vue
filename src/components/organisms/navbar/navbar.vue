@@ -1,6 +1,6 @@
 <template lang='pug'>
 .o-navbar
-  .logo
+  img(src='@assets/imgs/logo.svg').o-navbar__logo
 </template>
 
 <script>

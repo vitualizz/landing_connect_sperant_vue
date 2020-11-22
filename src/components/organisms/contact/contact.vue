@@ -2,9 +2,9 @@
 .o-contact
   .o-contact__message
     h1
-      span Encuentra tu
+      span.f-thin Encuentra tu
       br
-      span.f-bold DEPA!
+      span DEPA!
 
   .o-contact__form
     el-form(:modal='form')
