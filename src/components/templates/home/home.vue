@@ -1,6 +1,6 @@
 <template lang='pug'>
 .t-home
-  ONavbar(v-hidden:mobile-up)
+  ONavbar
   .t-home__wrapper
     .t-home__wrapperSide.t-home__wrapperBanner(v-hidden:mobile)
     .t-home__wrapperSide
