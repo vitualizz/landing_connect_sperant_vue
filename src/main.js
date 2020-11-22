@@ -9,9 +9,4 @@ const app = createApp(App)
 const components = [Form, Input, Select, Button]
 components.forEach(x => app.use(x))
 
-// Directive
-app.directive('hidden', (el, binding) => {
-  el.classList.add(`hidden-${binding.arg}`)
-})
-
 app.mount('#app')

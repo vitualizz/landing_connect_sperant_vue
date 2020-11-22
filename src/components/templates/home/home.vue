@@ -2,7 +2,7 @@
 .t-home
   ONavbar
   .t-home__wrapper
-    .t-home__wrapperSide.t-home__wrapperBanner(v-hidden:mobile)
+    .t-home__wrapperSide.t-home__wrapperBanner
     .t-home__wrapperSide
       OContact
 </template>
