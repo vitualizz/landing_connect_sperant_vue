@@ -41,13 +41,14 @@
       prop='project_related_id'
     )
       el-select(
+        v-loading='projectsLoad'
         v-model='form.project_related_id'
         placeholder='Proyecto'
       )
         el-option(
-          v-for='i in 5'
-          :label="`name - ${i}`"
-          :value="`name${i}`"
+          v-for='project in projects'
+          :label='project.name'
+          :value='project.id'
         )
 
     el-form-item(
@@ -102,18 +103,32 @@ export default {
         observation: [
           { required: true, message: 'Ingresa un comentario.', trigger: 'blur' }
         ],
-      }
+      },
+      projects: [],
+      projectsLoad: false
     }
   },
+  mounted () {
+    this.getProjects()
+  },
   methods: {
+    async getProjects () {
+      try {
+        this.projectsLoad = true
+
+        const { data } = await this.axios.get('/projects/list')
+
+        this.projects = data
+        this.projectsLoad = false
+      } catch (e) {
+        console.log(e)
+      }
+    },
     onClickSubmit () {
-      window.asd = this.$refs['form']
       this.$refs['form'].validate((valid) => {
-        console.log(valid)
         if (valid) {
           this.submitForm()
         } else {
-          console.log('gaaa')
           return false
         }
       })
