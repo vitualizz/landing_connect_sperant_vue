@@ -11,12 +11,13 @@
     ref='form'
     :model='form'
     :rules='rules'
+    v-loading='formLoad'
   ).o-contact__form
     el-form-item(
       label='Nombre'
-      prop='name'
+      prop='fname'
     )
-      el-input(v-model='form.name')
+      el-input(v-model='form.fname')
 
     el-form-item(
       label='Celular'
@@ -38,11 +39,11 @@
 
     el-form-item(
       label='Proyecto de Interés'
-      prop='project_related_id'
+      prop='project_related'
     )
       el-select(
         v-loading='projectsLoad'
-        v-model='form.project_related_id'
+        v-model='form.project_related'
         placeholder='Proyecto'
       )
         el-option(
@@ -73,16 +74,17 @@ export default {
   name: 'OContact',
   data () {
     return {
+      formLoad: false,
       form: {
-        name: '',
+        fname: '',
         phone: '',
         email: '',
         document: '',
-        project_related_id: null,
+        project_related: null,
         observation: ''
       },
       rules: {
-        name: [
+        fname: [
           { required: true, message: 'Ingresa tu nombre.', trigger: 'blur' }
         ],
         phone: [
@@ -97,7 +99,7 @@ export default {
           { required: true, message: 'Ingresa tu DNI.', trigger: 'blur' },
           { type: 'number', message: 'Ingresa un número de documento válido', trigger: 'change' }
         ],
-        project_related_id: [
+        project_related: [
           { required: true, message: 'Selecciona un Proyecto de Interés.', trigger: 'change' }
         ],
         observation: [
@@ -120,8 +122,15 @@ export default {
 
         this.projects = data
         this.projectsLoad = false
+
       } catch (e) {
-        console.log(e)
+
+        this.projectsLoad = false
+        this.$message({
+          message: 'Upps, no pudimos obtener los proyectos, ¡recarga la página!.',
+          type: 'error'
+        })
+
       }
     },
     onClickSubmit () {
@@ -133,8 +142,28 @@ export default {
         }
       })
     },
-    submitForm () {
-      alert('Enviadooo')
+    async submitForm () {
+      try {
+        this.formLoad = true
+        await this.axios.post('/clients/register', this.form)
+
+        this.formLoad = false
+        this.$refs.form.resetFields()
+
+        this.$message({
+          message: 'Ya tenemos tus datos, pronto nos pondremos en contacto contigo.',
+          type: 'success'
+        })
+
+      } catch (e) {
+
+        this.formLoad = false
+        this.$message({
+          message: 'Upps, no pudimos guardar tus datos, te contactaremos.',
+          type: 'error'
+        })
+
+      }
     }
   }
 }

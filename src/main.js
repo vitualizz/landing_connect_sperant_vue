@@ -3,7 +3,7 @@ import App from './App.vue'
 import axios from 'axios'
 import VueAxios from 'vue-axios'
 
-import { Form, Input, Button, Select, Loading } from 'element-plus'
+import { Form, Input, Button, Select, Loading, Message } from 'element-plus'
 
 const app = createApp(App)
 
@@ -14,7 +14,7 @@ axios.defaults.headers.Authorization = '1b7e8fa834d376146f5024ab8767e1e54da6bdf0
 app.use(VueAxios, axios)
 
 // Element
-const components = [Form, Input, Select, Button, Loading]
+const components = [Form, Input, Select, Button, Loading, Message]
 components.forEach(x => app.use(x))
 
 app.mount('#app')
