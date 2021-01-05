@@ -23,7 +23,7 @@
       label='Celular'
       prop='phone'
     )
-      el-input(v-model.number='form.phone')
+      el-input(v-model='form.phone')
 
     el-form-item(
       label='Email'
@@ -35,7 +35,7 @@
       label='DNI'
       prop='document'
     )
-      el-input(v-model.number='form.document')
+      el-input(v-model='form.document')
 
     el-form-item(
       label='Proyecto de Interés'
@@ -88,16 +88,14 @@ export default {
           { required: true, message: 'Ingresa tu nombre.', trigger: 'blur' }
         ],
         phone: [
-          { required: true, message: 'Ingresa tu número de celular.', trigger: 'blur' },
-          { type: 'number', message: 'Ingresa un número de celular válido', trigger: 'change' }
+          { required: true, message: 'Ingresa tu número de celular.', trigger: 'blur' }
         ],
         email: [
           { required: true, message: 'Ingresa tu email.', trigger: 'blur' },
           { type: 'email', message: 'Ingresa un email válido', trigger: 'blur' }
         ],
         document: [
-          { required: true, message: 'Ingresa tu DNI.', trigger: 'blur' },
-          { type: 'number', message: 'Ingresa un número de documento válido', trigger: 'change' }
+          { required: true, message: 'Ingresa tu DNI.', trigger: 'blur' }
         ],
         project_related: [
           { required: true, message: 'Selecciona un Proyecto de Interés.', trigger: 'change' }
