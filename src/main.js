@@ -8,7 +8,7 @@ import { Form, Input, Button, Select, Loading, Message } from 'element-plus'
 const app = createApp(App)
 
 // Axios
-const baseUrl = 'https://kuuost331l.execute-api.us-east-2.amazonaws.com/latest'
+const baseUrl = 'https://g8an8lzut9.execute-api.us-east-1.amazonaws.com/latest'
 axios.defaults.baseURL = baseUrl
 app.use(VueAxios, axios)
 
