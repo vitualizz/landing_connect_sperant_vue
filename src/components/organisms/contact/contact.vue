@@ -81,7 +81,14 @@ export default {
         email: '',
         document: '',
         project_related: null,
-        observation: ''
+        observation: '',
+        input_channel_id: 25,
+        source_id: 78,
+        interest_type_id: 4,
+        utm_source: 'Lumingo',
+        utm_medium: 'PortalInmobiliario',
+        utm_campaign: 'Lumingo',
+        app: 'Lumingo'
       },
       rules: {
         fname: [
